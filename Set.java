@@ -1,7 +1,7 @@
 /******
 * Set
 * Author: Christian Duncan
-* Modified by: Kevin Rodriguez
+* Modified by: Kevin Rodriguez  // TO-DO: (Add your names)
 * A simple class representing a Set of integers.
 * This is not fully implemented as we are just measuring
 * the time for computing intersections.
@@ -104,29 +104,23 @@ public class Set {
   //    Using a variation of bucket sort
   public static Set intersectionD(Set sA, Set sB) {
     Set result = new Set();
-/* Duncan's pseudocode: 
-intersection(A,B):
-   C = new Set();
-   // The following works in pseudocode but in practice you will need to use a different range!
-   bucket = new Boolean[-n..n]
-   for a in A: bucket[a] = true
-   for b in B: if bucket[b] then C.add(b)
-   return C
- * 
- */
-Boolean[] bucket = new Boolean[sA.elements.size() + -sB.elements.size()];
-//ArrayList <Boolean> bucket = new ArrayList<>(); 
 
+// create a bucket of the size of elements in the set
+int n = sA.elements.size();
+boolean[] bucket = new boolean[2 * n + 1];
+
+// ensure setting the buckets to true 
 for (int a: sA.elements){
-  bucket[a] = true;
+  bucket[a + n] = true;
 } 
 
+// if it's in set b, then ensure to add it to the set. 
 for (int b: sB.elements) {
-  if (bucket[b]){
+  if (bucket[b + n]){
     result.add(b);
   }
 }
-
+// return the final set 
     return result;
   }
 }

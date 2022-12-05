@@ -1,7 +1,7 @@
 /******
 * SetTester
 * Author: Christian Duncan
-*
+* Modified by: Kevin Rodriguez  // TO-DO: (Add your names)
 * A simple class to test the correctness of the Set Intersection methods
 ******/
 import java.io.FileNotFoundException;
